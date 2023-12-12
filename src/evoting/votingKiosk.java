@@ -1,5 +1,6 @@
 package evoting;
 
+import data.Nif;
 import data.VotingOption;
 import exceptions.*;
 
