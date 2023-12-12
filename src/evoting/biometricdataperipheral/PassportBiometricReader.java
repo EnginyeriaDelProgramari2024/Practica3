@@ -1,5 +1,6 @@
 package evoting.biometricdataperipheral;
 
+import data.BiometricData;
 import exceptions.*;
 
 public interface PassportBiometricReader {

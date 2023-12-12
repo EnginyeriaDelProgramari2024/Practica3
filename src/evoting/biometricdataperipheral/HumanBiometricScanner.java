@@ -1,5 +1,6 @@
 package evoting.biometricdataperipheral;
 
+import data.SingleBiometricData;
 import exceptions.*;
 
 /**

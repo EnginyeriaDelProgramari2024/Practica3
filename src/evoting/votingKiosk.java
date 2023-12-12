@@ -1,5 +1,6 @@
 package evoting;
 
+import data.VotingOption;
 import exceptions.*;
 
 /**

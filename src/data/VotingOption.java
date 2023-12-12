@@ -22,7 +22,7 @@ public class VotingOption {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VotingOption vO = (VotingOption) o;
-        return party.equals(niff.party);
+        return party.equals(vO.party);
     }
 
     @Override
