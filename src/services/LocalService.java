@@ -1,5 +1,6 @@
 package services;
 
+import data.Password;
 import exceptions.*;
 
 public interface LocalService {
