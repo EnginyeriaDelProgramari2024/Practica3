@@ -1,5 +1,7 @@
 package evoting.biometricdataperipheral;
 
+import exceptions.*;
+
 /**
  * Peripherals for reading and scanning biometric data
  */

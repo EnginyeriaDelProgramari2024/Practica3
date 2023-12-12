@@ -1,5 +1,7 @@
 package data;
 
+import exceptions.*;
+
 /**
  * Essential data classes
  */

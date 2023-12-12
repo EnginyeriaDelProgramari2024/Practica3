@@ -1,5 +1,7 @@
 package services;
 
+import exceptions.*;
+
 /**
  * External services involved in managing the electoral roll
  */

@@ -1,5 +1,7 @@
 package evoting;
 
+import exceptions.*;
+
 /**
  * Internal classes involved in in the exercise of the vote
  */
