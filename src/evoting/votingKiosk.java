@@ -47,7 +47,8 @@ public class votingKiosk {
     }
 
     public void vote() {
-        //. . .
+        System.out.println("Are you sure you want to vote for " + v0.getParty() + "?");
+        //TODO: Preguntar ProceduralException
     }
 
     public void confirmVotingOption(char conf) throws ConnectException {
