@@ -22,7 +22,8 @@ public class votingKiosk {
     }
 
     public void setDocument(char opt) {
-        //. . .
+        this.document = opt;
+        System.out.println("VotingKiosk::setDocument: " + opt);
     }
 
     public void enterAccount(String login, Password pssw) throws InvalidAccountException {
