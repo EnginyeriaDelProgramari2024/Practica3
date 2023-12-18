@@ -1,7 +1,7 @@
 package data;
 
 
-import exceptions.NotValidPassword;
+import exceptions.NotValidPasswordException;
 
 public class Password {
     private final int MINLENGTH = 8;
@@ -9,12 +9,12 @@ public class Password {
     private final String password;
 
     // Constructor
-    public Password(String password) throws NotValidPassword {
+    public Password(String password) throws NotValidPasswordException {
         if (password == null) {
             throw new IllegalArgumentException("Password cannot be null");
         }
         if (!verifyPassword(password)) {
-            throw new NotValidPassword("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter and one number");
+            throw new NotValidPasswordException("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter and one number");
         }
         this.password = password;
     }
