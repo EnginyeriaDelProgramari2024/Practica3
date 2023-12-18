@@ -47,7 +47,15 @@ public class votingKiosk {
     }
 
     public void consultVotingOption(VotingOption vopt) {
-        //. . .
+
+        if (vopt == null) {
+            throw new IllegalArgumentException("Voting option cannot be null");
+
+        } else {
+            String votingOption = vopt.getParty();
+            System.out.println("Consulting voting option.");
+            System.out.println("Party: " + votingOption);
+        }
     }
 
     public void vote() {
