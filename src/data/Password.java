@@ -1,13 +1,20 @@
 package data;
 
+
+import exceptions.NotValidPassword;
+
 public class Password {
+    private final int MINLENGTH = 8;
     // Attributes
     private final String password;
 
     // Constructor
-    public Password(String password) {
+    public Password(String password) throws NotValidPassword {
         if (password == null) {
             throw new IllegalArgumentException("Password cannot be null");
+        }
+        if (!verifyPassword(password)) {
+            throw new NotValidPassword("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter and one number");
         }
         this.password = password;
     }
@@ -15,5 +22,16 @@ public class Password {
     // Getters
     public String getPassword() {
         return password;
+    }
+
+    // Methods
+    private boolean verifyPassword(String password) {
+        if (password.length() < MINLENGTH) {
+            return false;
+        }
+        if (!password.matches(".*[a-z].*") || !password.matches(".*[A-Z].*") || !password.matches(".*[0-9].*")) {
+            return false;
+        }
+        return true;
     }
 }
