@@ -17,7 +17,8 @@ public class votingKiosk {
 
     // Input events
     public void initVoting() {
-        //. . .
+        eVoting = true;
+        System.out.println("EVoting inicialized correctly.");
     }
 
     public void setDocument(char opt) {
