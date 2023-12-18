@@ -30,7 +30,12 @@ public class votingKiosk {
     }
 
     public void confirmIdentif(char conf) throws InvalidDNIDocumException {
-        //. . .
+        if (conf == CONFIRMED) {
+            System.out.println("Identification confirmed succesfully.");
+
+        } else {
+            throw new InvalidDNIDocumException("Invalid identification.");
+        }
     }
 
     public void enterNif(Nif nif) throws NotEnabledException, ConnectException {
