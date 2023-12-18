@@ -9,6 +9,10 @@ import exceptions.*;
  * Internal classes involved in in the exercise of the vote
  */
 public class votingKiosk {
+    //Attributes
+    private char document;
+    private Nif nif;
+    private VotingOption v0;
     // ??? // The class members
     // ??? // The constructor/s
 
