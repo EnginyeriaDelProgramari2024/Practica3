@@ -35,7 +35,7 @@ public class votingKiosk {
     }
 
     public void enterNif(Nif nif) throws NotEnabledException, ConnectException {
-        //. . .
+        this.nif = nif;
     }
 
     public void initOptionsNavigation() {
