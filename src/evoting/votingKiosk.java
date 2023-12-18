@@ -9,6 +9,9 @@ import exceptions.*;
  * Internal classes involved in in the exercise of the vote
  */
 public class votingKiosk {
+
+    private boolean eVoting;
+    private static char CONFIRMED = 'Y';
     // ??? // The class members
     // ??? // The constructor/s
 
