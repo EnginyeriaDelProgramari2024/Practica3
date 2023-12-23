@@ -20,9 +20,10 @@ public class NifTest {
     }
 
     @Test
-    public void testValidNif() {
-        assertNotNull(validNif);
-        // assertEquals("Z34565434", validNif.validateNif);
+    public void testValidNif() throws InvalidDNIDocumException {
+        Nif nif = new Nif(validNifStr);
+        assertNotNull(nif);
+        assertEquals(validNifStr, nif.getNif());
     }
 
     @Test
