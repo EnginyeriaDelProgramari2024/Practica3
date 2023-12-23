@@ -8,24 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class PasswordTest {
-    private Password validPassword;
-    private Password invalidPassword;
+    private String validPasswordStr = "Password1";
+    private String invalidPasswordStr = "password";
 
     @BeforeEach
     public void setUp() {
-        // Valid password
-        try {
-            validPassword = new Password("");
-        } catch (NotValidPasswordException e) {
-            throw new RuntimeException("Failed to set up valid password");
-        }
-
-        // Invalid password
-        try {
-            invalidPassword = new Password("");
-        } catch (NotValidPasswordException e) {
-            throw new RuntimeException("Failed to set up invalid password");
-        }
+        // This method is called before each test
+        // We can use it to initialize the variables we use in the tests
+        // In this case, we don't need to do anything
     }
 
     @Test
