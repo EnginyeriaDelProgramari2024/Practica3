@@ -52,4 +52,8 @@ public class Nif {
 
         return letters[index];
     }
+
+    public String getNif() {
+        return nif;
+    }
 }
