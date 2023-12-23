@@ -1,11 +1,11 @@
 package data;
 
 import exceptions.InvalidDNIDocumException;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class NifTest {
 
@@ -28,6 +28,6 @@ public class NifTest {
 
     @Test
     public void testInvalidNif() {
-        assertNotNull(invalidNif);
+        assertThrows(InvalidDNIDocumException.class, () -> new Nif(invalidNifStr));
     }
 }
