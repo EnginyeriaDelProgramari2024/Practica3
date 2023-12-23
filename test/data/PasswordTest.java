@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PasswordTest {
-    private String validPasswordStr = "Password1";
-    private String invalidPasswordStr = "password";
+    private final String validPasswordStr = "Password1";
+    private final String invalidPasswordStr = "password";
 
     @BeforeEach
     public void setUp() {
