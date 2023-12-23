@@ -1,7 +1,5 @@
 package data;
 
-import exceptions.InvalidDNIDocumException;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +7,7 @@ public class VotingOptionTest {
     private VotingOption votingOption;
 
     @BeforeEach
-    public void setUp() throws InvalidDNIDocumException {
+    public void setUp() {
         votingOption = new VotingOption("PSOE");
     }
 
@@ -19,13 +17,13 @@ public class VotingOptionTest {
     }
 
     @Test
-    public void testEquals() throws InvalidDNIDocumException {
+    public void testEquals() {
         VotingOption votingOption2 = new VotingOption("PSOE");
         assert votingOption.equals(votingOption2);
     }
 
     @Test
-    public void testHashCode() throws InvalidDNIDocumException {
+    public void testHashCode() {
         VotingOption votingOption2 = new VotingOption("PSOE");
         assert votingOption.hashCode() == votingOption2.hashCode();
     }
