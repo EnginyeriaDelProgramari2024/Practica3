@@ -9,24 +9,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class NifTest {
 
-    private Nif validNif;
-    private Nif invalidNif;
+    private String validNifStr = "12345678Z";
+    private String invalidNifStr = "12345678A";
 
     @BeforeEach
     public void setUp() {
-        // Valid NIF
-        try {
-            validNif = new Nif("Z34565434");
-        } catch (InvalidDNIDocumException e) {
-            throw new RuntimeException("Failed to set up valid NIF", e);
-        }
-
-        // Invalid NIF
-        try {
-            invalidNif = new Nif("3456711X");
-        } catch (InvalidDNIDocumException e) {
-            throw new RuntimeException("Failed to set up invalid NIF", e);
-        }
+        // This method is called before each test
+        // We can use it to initialize the variables we use in the tests
+        // In this case, we don't need to do anything
     }
 
     @Test
