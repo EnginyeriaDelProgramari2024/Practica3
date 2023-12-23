@@ -19,13 +19,14 @@ public class PasswordTest {
     }
 
     @Test
-    public void testValidPassword() {
-        assertNotNull(validPassword);
-        assertEquals("", validPassword.getPassword());
+    public void testValidPassword() throws NotValidPasswordException {
+        Password password = new Password(validPasswordStr);
+        assertNotNull(password);
+        assertEquals(validPasswordStr, password.getPassword());
     }
 
     @Test
     public void testInvalidPassword() {
-        assertNotNull(invalidPassword);
+        assertThrows(NotValidPasswordException.class, () -> new Password(invalidPasswordStr));
     }
 }
