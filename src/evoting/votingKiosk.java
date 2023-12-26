@@ -9,9 +9,14 @@ import exceptions.*;
  * Internal classes involved in in the exercise of the vote
  */
 public class votingKiosk {
+    //Attributes
+    private char document;
+    private Nif nif;
+    private VotingOption v0;
 
     private boolean eVoting;
     private static char CONFIRMED = 'Y';
+
     // ??? // The class members
     // ??? // The constructor/s
 
@@ -22,7 +27,8 @@ public class votingKiosk {
     }
 
     public void setDocument(char opt) {
-        //. . .
+        this.document = opt;
+        System.out.println("VotingKiosk::setDocument: " + opt);
     }
 
     public void enterAccount(String login, Password pssw) throws InvalidAccountException {
@@ -53,7 +59,7 @@ public class votingKiosk {
     }
 
     public void enterNif(Nif nif) throws NotEnabledException, ConnectException {
-        //. . .
+        this.nif = nif;
     }
 
     public void initOptionsNavigation() {
@@ -73,7 +79,8 @@ public class votingKiosk {
     }
 
     public void vote() {
-        //. . .
+        System.out.println("Are you sure you want to vote for " + v0.getParty() + "?");
+        //TODO: Preguntar ProceduralException
     }
 
     public void confirmVotingOption(char conf) throws ConnectException {
