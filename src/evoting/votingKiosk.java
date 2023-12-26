@@ -16,6 +16,7 @@ public class votingKiosk {
 
     private boolean eVoting;
     private static char CONFIRMED = 'Y';
+    private static char CANCELED = 'N';
 
     // ??? // The class members
     // ??? // The constructor/s
@@ -92,9 +93,9 @@ public class votingKiosk {
             System.out.println("Voting has not been initialized.");
         }
 
-        if (conf == 'Y') {
+        if (conf == CONFIRMED) {
             System.out.println("Voting option confirmed.");
-        } else if (conf == 'N') {
+        } else if (conf == CANCELED) {
             System.out.println("Voting option canceled.");
         } else {
             System.out.println("Error: Invalid confirmation option.");
