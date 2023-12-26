@@ -63,7 +63,11 @@ public class votingKiosk {
     }
 
     public void initOptionsNavigation() {
-        //. . .
+        if (!eVoting) {
+            System.out.println("Voting has not been initialized.");
+        }
+
+        System.out.println("Menús: ");
     }
 
     public void consultVotingOption(VotingOption vopt) {
