@@ -4,38 +4,28 @@ import exceptions.NotValidPasswordException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PasswordTest {
-    private Password validPassword;
-    private Password invalidPassword;
+    private final String validPasswordStr = "Password1";
+    private final String invalidPasswordStr = "password";
 
     @BeforeEach
     public void setUp() {
-        // Valid password
-        try {
-            validPassword = new Password("");
-        } catch (NotValidPasswordException e) {
-            throw new RuntimeException("Failed to set up valid password");
-        }
-
-        // Invalid password
-        try {
-            invalidPassword = new Password("");
-        } catch (NotValidPasswordException e) {
-            throw new RuntimeException("Failed to set up invalid password");
-        }
+        // This method is called before each test
+        // We can use it to initialize the variables we use in the tests
+        // In this case, we don't need to do anything
     }
 
     @Test
-    public void testValidPassword() {
-        assertNotNull(validPassword);
-        assertEquals("", validPassword.getPassword());
+    public void testValidPassword() throws NotValidPasswordException {
+        Password password = new Password(validPasswordStr);
+        assertNotNull(password);
+        assertEquals(validPasswordStr, password.getPassword());
     }
 
     @Test
     public void testInvalidPassword() {
-        assertNotNull(invalidPassword);
+        assertThrows(NotValidPasswordException.class, () -> new Password(invalidPasswordStr));
     }
 }
