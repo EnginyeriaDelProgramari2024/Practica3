@@ -26,7 +26,21 @@ public class votingKiosk {
     }
 
     public void enterAccount(String login, Password pssw) throws InvalidAccountException {
-        //. . .
+        if (!isValidAccount(login, pssw)) {
+            throw new InvalidAccountException("Invalid account");
+        }
+    }
+
+    private boolean isValidAccount(String login, Password pssw) {
+        return isValidLogin(login) && isValidPassword(pssw);
+    }
+
+    private boolean isValidLogin(String login) {
+        return login != null;
+    }
+
+    private boolean isValidPassword(Password pssw) {
+        return pssw != null;
     }
 
     public void confirmIdentif(char conf) throws InvalidDNIDocumException {
