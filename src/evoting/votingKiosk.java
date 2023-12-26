@@ -88,7 +88,17 @@ public class votingKiosk {
     }
 
     public void confirmVotingOption(char conf) throws ConnectException {
-        //. . .
+        if (!eVoting) {
+            System.out.println("Voting has not been initialized.");
+        }
+
+        if (conf == 'Y') {
+            System.out.println("Voting option confirmed.");
+        } else if (conf == 'N') {
+            System.out.println("Voting option canceled.");
+        } else {
+            System.out.println("Error: Invalid confirmation option.");
+        }
     }
 
     // Internal operation, not required
