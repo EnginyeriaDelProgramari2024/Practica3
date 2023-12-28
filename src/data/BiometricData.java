@@ -10,4 +10,5 @@ public class BiometricData {
     public byte[] getBiometricKey() {
         return biometricKey;
     }
+
 }
