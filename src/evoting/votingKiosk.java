@@ -64,7 +64,15 @@ public class votingKiosk  {
     }
 
     public void grantExplicitConsent (char cons) {
-       // . . .
+        if (cons == CONFIRMED) {
+            System.out.println("Explicit consent has been granted.");
+
+        } else if (cons == CANCELED) {
+            System.out.println("Explicit consent has been denied.");
+
+        } else {
+            System.out.println("Error: Invalid confirmation option.");
+        }
     }
     public void readPassport () throws NotValidPassportException, PassportBiometricReadingException {
         //. . .
