@@ -35,28 +35,4 @@ public class VotingOption {
         return "Vote option {" + "party='" + party + '\'' + '}';
     }
 
-    private void verifiyBiometricData(BiometricData humanBioD, BiometricData passpBioD) throws BiometricVerificationFailedException {
-        //. . .
-    }
-
-    private void removeBiometricData() {
-        //. . .
-    }
-
-    public void grantExplicitConsent(char cons) {
-        //. . .
-    }
-
-    public void readPassport() throws NotValidPassportException, PassportBiometricReadingException {
-        //. . .
-    }
-
-    public void readFaceBiometrics() throws HumanBiometricScanningException {
-        //. . .
-    }
-
-    public void readFingerPrintBiometrics() throws NotEnabledException, HumanBiometricScanningException, BiometricVerificationFailedException, ConnectException {
-        //. . .
-    }
-
 }
