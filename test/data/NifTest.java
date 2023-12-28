@@ -1,42 +1,33 @@
 package data;
 
 import exceptions.InvalidDNIDocumException;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class NifTest {
 
-    private Nif validNif;
-    private Nif invalidNif;
+    private String validNifStr = "12345678Z";
+    private String invalidNifStr = "12345678A";
 
     @BeforeEach
     public void setUp() {
-        // Valid NIF
-        try {
-            validNif = new Nif("Z34565434");
-        } catch (InvalidDNIDocumException e) {
-            throw new RuntimeException("Failed to set up valid NIF", e);
-        }
-
-        // Invalid NIF
-        try {
-            invalidNif = new Nif("3456711X");
-        } catch (InvalidDNIDocumException e) {
-            throw new RuntimeException("Failed to set up invalid NIF", e);
-        }
+        // This method is called before each test
+        // We can use it to initialize the variables we use in the tests
+        // In this case, we don't need to do anything
     }
 
     @Test
-    public void testValidNif() {
-        assertNotNull(validNif);
-        // assertEquals("Z34565434", validNif.validateNif);
+    public void testValidNif() throws InvalidDNIDocumException {
+        Nif nif = new Nif(validNifStr);
+        assertNotNull(nif);
+        assertEquals(validNifStr, nif.getNif());
     }
 
     @Test
     public void testInvalidNif() {
-        assertNotNull(invalidNif);
+        assertThrows(InvalidDNIDocumException.class, () -> new Nif(invalidNifStr));
     }
 }

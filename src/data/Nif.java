@@ -5,11 +5,12 @@ import exceptions.InvalidDNIDocumException;
 public class Nif {
 
     private final String nif;
+
     public Nif(String nif) throws InvalidDNIDocumException {
-        if(nif == null) {
+        if (nif == null) {
             throw new IllegalArgumentException("Nif cannot be null");
         }
-        if(!validateNif(nif)) {
+        if (!validateNif(nif)) {
             throw new InvalidDNIDocumException("Not valid Nif");
         }
 
