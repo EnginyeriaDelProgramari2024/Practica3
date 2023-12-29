@@ -66,8 +66,17 @@ public class votingKiosk  {
     public void grantExplicitConsent (char cons) {
        // . . .
     }
-    public void readPassport () throws NotValidPassportException, PassportBiometricReadingException {
-        //. . .
+
+    public void readPassport() throws NotValidPassportException, PassportBiometricReadingException {
+        // evento para indicar al sistema que puede proceder con la validación y lectura de los datos del pasaporte.
+        System.out.println("Reading passport");
+        if (Math.random() < 0.5) {
+            throw new NotValidPassportException("Passport is not valid");
+        } else if (Math.random() < 0.5) {
+            throw new PassportBiometricReadingException("Passport biometric data could not be read");
+        } else {
+            System.out.println("Passport read");
+        }
     }
     public void readFaceBiometrics () throws HumanBiometricScanningException
     {
