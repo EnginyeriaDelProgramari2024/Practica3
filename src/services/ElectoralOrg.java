@@ -17,7 +17,16 @@ public class ElectoralOrg implements ElectoralOrganism {
     }
 
     @Override
-    public void disableVoter(Nif nif) throws ConnectException {
+    public void disableVoter(Nif nif) throws ConnectException, NotEnabledException {
 
+        //From the NIF, it is recorded in the electoral roll that said voter has already exercised the right to vote (the voter is disqualified, thus avoiding the possibility of duplicate votes)
+
+        boolean voted = false;
+        if(canVote(nif)){
+            voted = true;
+        }
+        if( voted == true){
+            throw new ConnectException("Voter has already voted");
+        }
     }
 }
