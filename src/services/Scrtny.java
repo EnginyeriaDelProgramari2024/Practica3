@@ -35,7 +35,8 @@ public class Scrtny implements Scrutiny{
 
     @Override
     public int getBlanks() {
-        return 0;
+        // Returns the number of blank votes.
+        return blankVotes;
     }
 
     @Override
