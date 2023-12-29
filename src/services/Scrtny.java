@@ -5,6 +5,16 @@ import data.VotingOption;
 import java.util.List;
 
 public class Scrtny implements Scrutiny{
+
+    private int totalVotes;
+    private int blankVotes;
+
+    public Scrtny() {
+
+        this.totalVotes = 0;
+        this.blankVotes = 0;
+
+    }
     @Override
     public void initVoteCount(List<VotingOption> validParties) {
 
@@ -13,6 +23,7 @@ public class Scrtny implements Scrutiny{
     @Override
     public void scrutinize(VotingOption vopt) {
 
+        // Incorporates the voting option (vopt) in the count of votes.
     }
 
     @Override
