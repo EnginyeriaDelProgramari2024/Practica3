@@ -22,7 +22,10 @@ public class Scrtny implements Scrutiny{
 
     @Override
     public int getTotal() {
-        return 0;
+
+        // Returns the total number of votes counted.
+        return totalVotes;
+
     }
 
     @Override
