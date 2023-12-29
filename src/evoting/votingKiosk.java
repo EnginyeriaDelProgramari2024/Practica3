@@ -82,7 +82,7 @@ public class votingKiosk  {
        // . . .
     }
     public void readFingerPrintBiometrics () throws NotEnabledException, HumanBiometricScanningException, BiometricVerificationFailedException, ConnectException {
-       // . . .
+       System.out.println("Can proceed to read fingerprint biometrics.");
     }
 
 }
