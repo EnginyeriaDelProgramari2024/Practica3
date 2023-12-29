@@ -9,7 +9,7 @@ import exceptions.*;
 /**
  * Internal classes involved in in the exercise of the vote
  */
-public class votingKiosk  {
+public class votingKiosk {
     // ??? // The class members
     // ??? // The constructor/s
 
@@ -56,15 +56,20 @@ public class votingKiosk  {
     }
     //(...) // Setter methods for injecting dependences and additional methods
 
-    private void verifiyBiometricData (BiometricData humanBioD, BiometricData passpBioD) throws BiometricVerificationFailedException {
-        //. . .
+    private void verifiyBiometricData(BiometricData humanBioD, BiometricData passpBioD) throws BiometricVerificationFailedException {
+        if (!humanBioD.equals(passpBioD)) {
+            throw new BiometricVerificationFailedException("Biometric data does not match");
+        } else {
+            System.out.println("Biometric data matches");
+        }
     }
-    private void removeBiometricData () {
+
+    private void removeBiometricData() {
         //. . .
     }
 
-    public void grantExplicitConsent (char cons) {
-       // . . .
+    public void grantExplicitConsent(char cons) {
+        // . . .
     }
 
     public void readPassport() throws NotValidPassportException, PassportBiometricReadingException {
@@ -78,12 +83,13 @@ public class votingKiosk  {
             System.out.println("Passport read");
         }
     }
-    public void readFaceBiometrics () throws HumanBiometricScanningException
-    {
-       // . . .
+
+    public void readFaceBiometrics() throws HumanBiometricScanningException {
+        // . . .
     }
-    public void readFingerPrintBiometrics () throws NotEnabledException, HumanBiometricScanningException, BiometricVerificationFailedException, ConnectException {
-       // . . .
+
+    public void readFingerPrintBiometrics() throws NotEnabledException, HumanBiometricScanningException, BiometricVerificationFailedException, ConnectException {
+        // . . .
     }
 
 }
