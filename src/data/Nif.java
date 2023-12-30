@@ -18,7 +18,7 @@ public class Nif {
     }
 
     // Method for validating NIF
-    private boolean validateNif(String nif) {
+    public static boolean validateNif(String nif) {
         // Verify correct length NIF
         if (nif.length() != 9) {
             return false;
@@ -43,7 +43,7 @@ public class Nif {
     }
 
     // Method for calculating the corresponding letter
-    private char calculateLetter(String numerosStr) {
+    private static char calculateLetter(String numerosStr) {
         char[] letters = "TRWAGMYFPDXBNJZSQVHLCKE".toCharArray();
 
         // Calculate the index
