@@ -4,7 +4,9 @@ package data;
 import exceptions.NotValidPasswordException;
 
 public class Password {
+
     private final int MINLENGTH = 8;
+  
     // Attributes
     private final String password;
 
