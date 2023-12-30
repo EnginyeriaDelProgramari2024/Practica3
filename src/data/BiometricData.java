@@ -16,4 +16,15 @@ public class BiometricData {
     public SingleBiometricData getFingerprintBiometricData() {
         return fingerprintBiometricData;
     }
+
+    private byte[] biometricKey;
+
+    public void SingleBiometricData(byte[] biometricKey) {
+        this.biometricKey = biometricKey;
+    }
+
+    public byte[] getBiometricKey() {
+        return biometricKey;
+    }
+
 }
