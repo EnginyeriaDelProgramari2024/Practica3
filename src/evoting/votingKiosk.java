@@ -110,10 +110,15 @@ public class votingKiosk {
     }
     //(...) // Setter methods for injecting dependences and additional methods
 
-    private void verifiyBiometricData (BiometricData humanBioD, BiometricData passpBioD) throws BiometricVerificationFailedException {
-        //. . .
+    private void verifiyBiometricData(BiometricData humanBioD, BiometricData passpBioD) throws BiometricVerificationFailedException {
+        if (!humanBioD.equals(passpBioD)) {
+            throw new BiometricVerificationFailedException("Biometric data does not match");
+        } else {
+            System.out.println("Biometric data matches");
+        }
     }
-    private void removeBiometricData () {
+
+    private void removeBiometricData() {
         //. . .
     }
 
@@ -128,13 +133,23 @@ public class votingKiosk {
             System.out.println("Error: Invalid confirmation option.");
         }
     }
-    public void readPassport () throws NotValidPassportException, PassportBiometricReadingException {
-        //. . .
+
+    public void readPassport() throws NotValidPassportException, PassportBiometricReadingException {
+        // evento para indicar al sistema que puede proceder con la validación y lectura de los datos del pasaporte.
+        System.out.println("Reading passport");
+        if (Math.random() < 0.5) {
+            throw new NotValidPassportException("Passport is not valid");
+        } else if (Math.random() < 0.5) {
+            throw new PassportBiometricReadingException("Passport biometric data could not be read");
+        } else {
+            System.out.println("Passport read");
+        }
     }
-    public void readFaceBiometrics () throws HumanBiometricScanningException
-    {
-       // . . .
+
+    public void readFaceBiometrics() throws HumanBiometricScanningException {
+        // . . .
     }
+
     public void readFingerPrintBiometrics () throws NotEnabledException, HumanBiometricScanningException, BiometricVerificationFailedException, ConnectException {
        System.out.println("Can proceed to read fingerprint biometrics.");
     }
