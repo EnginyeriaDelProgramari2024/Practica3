@@ -6,7 +6,7 @@ import data.VotingOption;
 import exceptions.*;
 
 /**
- * Internal classes involved in in the exercise of the vote
+ * Internal classes involved in the exercise of the vote
  */
 public class votingKiosk {
     // ??? // The class members
