@@ -12,7 +12,7 @@ public class ElectoralOrg implements ElectoralOrganism {
 
         if(nif == null) throw new ConnectException("Nif is null");
         if(nif.getNif() == null) throw new ConnectException("Nif is null");
-        if(!validateNif(nif.getNif())) throw new NotEnabledException("Nif is not enabled");
+        if(!Nif.validateNif(nif.getNif())) throw new NotEnabledException("Nif is not enabled");
 
     }
 
@@ -22,6 +22,7 @@ public class ElectoralOrg implements ElectoralOrganism {
         //From the NIF, it is recorded in the electoral roll that said voter has already exercised the right to vote (the voter is disqualified, thus avoiding the possibility of duplicate votes)
 
         boolean voted = false;
+        //TODO: Check if the voter has already voted
         if(canVote(nif)){
             voted = true;
         }
