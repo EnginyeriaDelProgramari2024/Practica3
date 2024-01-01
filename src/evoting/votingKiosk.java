@@ -36,7 +36,7 @@ public class votingKiosk {
         }
         eVoting = true;
         System.out.println("EVoting inicialized correctly.");
-        procedure++;
+        this.procedure++;
     }
 
     public void setDocument(char opt) throws ProceduralException {
@@ -45,7 +45,7 @@ public class votingKiosk {
         }
         this.document = opt;
         System.out.println("Solicita ayuda al personal de soporte.");
-        procedure++;
+        this.procedure++;
     }
 
     public void enterAccount(String login, Password pssw) throws InvalidAccountException, ProceduralException {
@@ -56,7 +56,7 @@ public class votingKiosk {
             throw new InvalidAccountException("Invalid account");
         }
         System.out.println("Autentification ok");
-        procedure++;
+        this.procedure++;
     }
 
     // Función auxiliar para comprobar la validez de la cuenta
@@ -84,7 +84,7 @@ public class votingKiosk {
         } else {
             throw new InvalidDNIDocumException("Invalid identification.");
         }
-        procedure++;
+        this.procedure++;
     }
 
     public void enterNif(Nif nif) throws NotEnabledException, ConnectException, ProceduralException {
@@ -93,7 +93,7 @@ public class votingKiosk {
         }
         this.nif = nif;
         System.out.println("Nif ok, en proceso de verificación de derecho a voto.");
-        procedure++;
+        this.procedure++;
     }
 
     public void initOptionsNavigation() throws ProceduralException {
@@ -110,7 +110,7 @@ public class votingKiosk {
             System.out.println(p);
         }
         System.out.println("Autenticación ok.");
-        procedure++;
+        this.procedure++;
     }
 
     public void consultVotingOption(VotingOption vopt) throws ProceduralException, IllegalArgumentException {
@@ -125,7 +125,7 @@ public class votingKiosk {
             System.out.println("Consulting voting option.");
             System.out.println("Party: " + votingOption);
         }
-        procedure++;
+        this.procedure++;
     }
 
     public void vote() throws ProceduralException {
@@ -133,7 +133,7 @@ public class votingKiosk {
             throw new ProceduralException("Wrong procedure");
         }
         System.out.println("Are you sure you want to vote for " + v0.getParty() + "?");
-        procedure++;
+        this.procedure++;
     }
 
     public void confirmVotingOption(char conf) throws ConnectException, ProceduralException {
@@ -151,7 +151,7 @@ public class votingKiosk {
         } else {
             System.out.println("Error: Invalid confirmation option.");
         }
-        procedure++;
+        this.procedure++;
     }
 
     // Internal operation, not required
