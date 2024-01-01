@@ -12,12 +12,8 @@ public class BiometricDataTest {
 
     @BeforeEach
     public void setUp() {
-        // This method is called before each test
-        // We can use it to initialize the variables we use in the tests
-        // In this case, we don't need to do anything
-
-        facialBiometricData = new SingleBiometricData();
-        fingerprintBiometricData = new SingleBiometricData();
+        facialBiometricData = new SingleBiometricData(new byte[0], "facial");
+        fingerprintBiometricData = new SingleBiometricData(new byte[0], "fingerprint");
         biometricKey = new byte[0];
     }
 
