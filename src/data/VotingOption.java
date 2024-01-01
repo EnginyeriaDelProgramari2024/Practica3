@@ -69,6 +69,6 @@ public class VotingOption {
      */
     @Override
     public String toString() {
-        return "Vote option {" + "party='" + party + '\'' + '}';
+        return party;
     }
 }
