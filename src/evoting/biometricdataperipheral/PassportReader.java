@@ -33,7 +33,7 @@ public class PassportReader implements PassportBiometricReader {
             BiometricData biometricData = new BiometricData(getPassportBiometricData().getFacialBiometricData(), getPassportBiometricData().getFingerprintBiometricData());
             return biometricData;
         } catch (Exception e) {
-            throw new PassportBiometricReadingException("Error reading passport biometric data.", e);
+            throw new PassportBiometricReadingException("Error reading passport biometric data.");
         }
     }
 }
