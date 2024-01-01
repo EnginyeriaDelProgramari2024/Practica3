@@ -36,6 +36,9 @@ public class ElectoralOrg implements ElectoralOrganism {
         if (nif == null) throw new ConnectException("Nif is null");
         if (nif.getNif() == null) throw new ConnectException("Nif is null");
         if (!Nif.validateNif(nif.getNif())) throw new NotEnabledException("Nif is not enabled");
+        if (this.voted) throw new NotEnabledException("Nif is not enabled");
+
+        System.out.println("Nif is enabled");
     }
 
     /**
