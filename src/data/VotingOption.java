@@ -1,18 +1,37 @@
+/* --------------------------------------------------------------------------------------------------------------------------
+File: VotingOption.java
+Package: data
+Authors: Guillem Mora
+         Roberta Alina Mititelu
+         Loana Rodrigues Morais
+--------------------------------------------------------------------------------------------------------------------------- */
+
+
 package data;
 
 import exceptions.*;
 
+
 /**
- * Essential data classes
+ * VotingOption Class
  */
 public class VotingOption {
-    // The tax identification number in the Spanish state.
     private final String party;
 
+    /**
+     * Contructor
+     *
+     * @param option option
+     */
     public VotingOption(String option) {
         this.party = option;
     }
 
+    /**
+     * Return party
+     *
+     * @return party
+     */
     public String getParty() {
         return party;
     }
@@ -34,5 +53,4 @@ public class VotingOption {
     public String toString() {
         return "Vote option {" + "party='" + party + '\'' + '}';
     }
-
 }

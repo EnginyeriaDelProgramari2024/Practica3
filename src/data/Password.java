@@ -1,16 +1,31 @@
-package data;
+/* --------------------------------------------------------------------------------------------------------------------------
+File: Password.java
+Package: data
+Authors: Guillem Mora
+         Roberta Alina Mititelu
+         Loana Rodrigues Morais
+--------------------------------------------------------------------------------------------------------------------------- */
 
+
+package data;
 
 import exceptions.NotValidPasswordException;
 
-public class Password {
 
+/**
+ * Password Class
+ *
+ */
+public class Password {
     private static final int MINLENGTH = 8;
-  
-    // Attributes
     private final String password;
 
-    // Constructor
+    /**
+     * Constructor
+     *
+     * @param password password
+     * @throws NotValidPasswordException
+     */
     public Password(String password) throws NotValidPasswordException {
         if (password == null) {
             throw new IllegalArgumentException("Password cannot be null");
@@ -21,12 +36,22 @@ public class Password {
         this.password = password;
     }
 
-    // Getters
+    /**
+     * Get password
+     *
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
 
-    // Methods
+    /**
+     * Verify password
+     *
+     * @param password password
+     * @return true -> password.length() > MINLENGTH || 1 uppercase letter - 1 lowercase letter - 1 number
+     *         false -> opposite case
+     */
     public static boolean verifyPassword(String password) {
         if (password.length() < MINLENGTH) {
             return false;

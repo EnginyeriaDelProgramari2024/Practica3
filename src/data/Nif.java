@@ -1,6 +1,16 @@
+/* --------------------------------------------------------------------------------------------------------------------------
+File: Nif.java
+Package: data
+Authors: Guillem Mora
+         Roberta Alina Mititelu
+         Loana Rodrigues Morais
+--------------------------------------------------------------------------------------------------------------------------- */
+
+
 package data;
 
 import exceptions.InvalidDNIDocumException;
+
 
 public class Nif {
 
