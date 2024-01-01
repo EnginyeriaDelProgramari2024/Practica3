@@ -1,9 +1,6 @@
 package evoting;
 
-import data.BiometricData;
-import data.Nif;
-import data.Password;
-import data.VotingOption;
+import data.*;
 import exceptions.*;
 
 /**
@@ -38,6 +35,7 @@ public class votingKiosk {
         if (!isValidAccount(login, pssw)) {
             throw new InvalidAccountException("Invalid account");
         }
+        System.out.println("Autentification ok");
     }
 
     private boolean isValidAccount(String login, Password pssw) {
@@ -49,7 +47,7 @@ public class votingKiosk {
     }
 
     private boolean isValidPassword(Password pssw) {
-        return pssw != null;
+        return Password.verifyPassword(pssw.getPassword());
     }
 
     public void confirmIdentif(char conf) throws InvalidDNIDocumException {
@@ -71,6 +69,10 @@ public class votingKiosk {
         }
 
         System.out.println("Menús: ");
+
+        for (Party p : Party.values()) {
+            System.out.println(p);
+        }
     }
 
     public void consultVotingOption(VotingOption vopt) {

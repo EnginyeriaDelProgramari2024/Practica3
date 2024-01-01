@@ -48,7 +48,7 @@ public class BiometricData {
     }
 
     /**
-     *
+     * Set biometric key
      *
      * @param biometricKey biometricKey
      */
