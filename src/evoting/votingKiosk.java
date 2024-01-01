@@ -108,7 +108,6 @@ public class votingKiosk {
     private void finalizeSession() {
         //. . .
     }
-    //(...) // Setter methods for injecting dependences and additional methods
 
     private void verifiyBiometricData(BiometricData humanBioD, BiometricData passpBioD) throws BiometricVerificationFailedException {
         if (!humanBioD.equals(passpBioD)) {
@@ -147,7 +146,7 @@ public class votingKiosk {
     }
 
     public void readFaceBiometrics() throws HumanBiometricScanningException {
-        // . . .
+        System.out.println("Can proceed to read face biometrics.");
     }
 
     public void readFingerPrintBiometrics () throws NotEnabledException, HumanBiometricScanningException, BiometricVerificationFailedException, ConnectException {
