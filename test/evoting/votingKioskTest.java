@@ -1,6 +1,9 @@
 package evoting;
 
+import data.Nif;
+import data.Party;
 import data.Password;
+import data.VotingOption;
 import exceptions.*;
 import org.junit.jupiter.api.*;
 
@@ -30,4 +33,43 @@ public class votingKioskTest {
         vk.setDocument('N');
 
     }
+
+    @Test
+    @Order(3)
+    public void confirmIdentifProceduralException() throws ProceduralException, NotValidPasswordException, InvalidAccountException {
+        assertThrows(ProceduralException.class, () -> vk.confirmIdentif('Y'));
+        vk.enterAccount("Guillem", new Password("12345678aA"));
+    }
+
+    @Test
+    @Order(4)
+    public void enterNifProceduralException() throws ProceduralException, NotValidPasswordException, InvalidAccountException, InvalidDNIDocumException {
+        assertThrows(ProceduralException.class, () -> vk.enterNif(new Nif("12345678Z")));
+        vk.confirmIdentif('Y');
+    }
+
+    @Test
+    @Order(5)
+    public void initOptionsNavigationProceduralException() throws ProceduralException, NotValidPasswordException, InvalidAccountException, InvalidDNIDocumException, NotEnabledException, ConnectException {
+        assertThrows(ProceduralException.class, () -> vk.initOptionsNavigation());
+        vk.enterNif(new Nif("12345678Z"));
+    }
+
+    @Test
+    @Order(6)
+    public void consultVotingOptionsProceduralException() throws ProceduralException, NotValidPasswordException, InvalidAccountException, InvalidDNIDocumException, NotEnabledException, ConnectException {
+        assertThrows(ProceduralException.class, () -> vk.consultVotingOption(new VotingOption("PSOE")));
+        vk.initOptionsNavigation();
+    }
+
+    @Test
+    @Order(7)
+    public void voteProceduralException() throws ProceduralException, NotValidPasswordException, InvalidAccountException, InvalidDNIDocumException, NotEnabledException, ConnectException {
+        assertThrows(ProceduralException.class, () -> vk.vote());
+        vk.consultVotingOption(new VotingOption("PSOE"));
+    }
+
+
+
+
 }
