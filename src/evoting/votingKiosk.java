@@ -17,6 +17,8 @@ public class votingKiosk {
     private static char CONFIRMED = 'Y';
     private static char CANCELED = 'N';
 
+    private int procedure;
+
     // ??? // The class members
     // ??? // The constructor/s
     public votingKiosk() {
@@ -28,49 +30,76 @@ public class votingKiosk {
     }
 
     // Input events
-    public void initVoting() {
+    public void initVoting() throws ProceduralException {
+        if (procedure != 0) {
+            throw new ProceduralException("Wrong procedure");
+        }
         eVoting = true;
         System.out.println("EVoting inicialized correctly.");
+        procedure++;
     }
 
-    public void setDocument(char opt) {
+    public void setDocument(char opt) throws ProceduralException {
+        if (procedure != 1) {
+            throw new ProceduralException("Wrong procedure");
+        }
         this.document = opt;
-        System.out.println("VotingKiosk::setDocument: " + opt);
+        System.out.println("Solicita ayuda al personal de soporte.");
+        procedure++;
     }
 
-    public void enterAccount(String login, Password pssw) throws InvalidAccountException {
+    public void enterAccount(String login, Password pssw) throws InvalidAccountException, ProceduralException {
+        if (procedure != 2) {
+            throw new ProceduralException("Wrong procedure");
+        }
         if (!isValidAccount(login, pssw)) {
             throw new InvalidAccountException("Invalid account");
         }
         System.out.println("Autentification ok");
+        procedure++;
     }
 
+    // Función auxiliar para comprobar la validez de la cuenta
     private boolean isValidAccount(String login, Password pssw) {
         return isValidLogin(login) && isValidPassword(pssw);
     }
 
+    // Funciones auxiliares para comprobar la validez del login
     private boolean isValidLogin(String login) {
         return login != null;
     }
 
+    // Funciones auxiliares para comprobar la validez de la contraseña
     private boolean isValidPassword(Password pssw) {
         return Password.verifyPassword(pssw.getPassword());
     }
 
-    public void confirmIdentif(char conf) throws InvalidDNIDocumException {
+    public void confirmIdentif(char conf) throws InvalidDNIDocumException, ProceduralException {
+        if (procedure != 3) {
+            throw new ProceduralException("Wrong procedure");
+        }
         if (conf == CONFIRMED) {
             System.out.println("Identification confirmed succesfully.");
 
         } else {
             throw new InvalidDNIDocumException("Invalid identification.");
         }
+        procedure++;
     }
 
-    public void enterNif(Nif nif) throws NotEnabledException, ConnectException {
+    public void enterNif(Nif nif) throws NotEnabledException, ConnectException, ProceduralException {
+        if (procedure != 4) {
+            throw new ProceduralException("Wrong procedure");
+        }
         this.nif = nif;
+        System.out.println("Nif ok, en proceso de verificación de derecho a voto.");
+        procedure++;
     }
 
-    public void initOptionsNavigation() {
+    public void initOptionsNavigation() throws ProceduralException {
+        if (procedure != 5) {
+            throw new ProceduralException("Wrong procedure");
+        }
         if (!eVoting) {
             System.out.println("Voting has not been initialized.");
         }
@@ -80,10 +109,14 @@ public class votingKiosk {
         for (Party p : Party.values()) {
             System.out.println(p);
         }
+        System.out.println("Autenticación ok.");
+        procedure++;
     }
 
-    public void consultVotingOption(VotingOption vopt) {
-
+    public void consultVotingOption(VotingOption vopt) throws ProceduralException, IllegalArgumentException {
+        if (procedure != 6) {
+            throw new ProceduralException("Wrong procedure");
+        }
         if (vopt == null) {
             throw new IllegalArgumentException("Voting option cannot be null");
 
@@ -92,14 +125,21 @@ public class votingKiosk {
             System.out.println("Consulting voting option.");
             System.out.println("Party: " + votingOption);
         }
+        procedure++;
     }
 
-    public void vote() {
+    public void vote() throws ProceduralException {
+        if (procedure != 7) {
+            throw new ProceduralException("Wrong procedure");
+        }
         System.out.println("Are you sure you want to vote for " + v0.getParty() + "?");
-        //TODO: Preguntar ProceduralException
+        procedure++;
     }
 
-    public void confirmVotingOption(char conf) throws ConnectException {
+    public void confirmVotingOption(char conf) throws ConnectException, ProceduralException {
+        if (procedure != 8) {
+            throw new ProceduralException("Wrong procedure");
+        }
         if (!eVoting) {
             System.out.println("Voting has not been initialized.");
         }
@@ -111,11 +151,15 @@ public class votingKiosk {
         } else {
             System.out.println("Error: Invalid confirmation option.");
         }
+        procedure++;
     }
 
     // Internal operation, not required
-    private void finalizeSession() {
-        //. . .
+    private void finalizeSession() throws ProceduralException {
+        if (procedure != 9) {
+            throw new ProceduralException("Wrong procedure");
+        }
+        procedure = 0;
     }
 
     private void verifiyBiometricData(BiometricData humanBioD, BiometricData passpBioD) throws BiometricVerificationFailedException {
@@ -130,7 +174,7 @@ public class votingKiosk {
         //. . .
     }
 
-    public void grantExplicitConsent (char cons) {
+    public void grantExplicitConsent(char cons) {
         if (cons == CONFIRMED) {
             System.out.println("Explicit consent has been granted.");
 
@@ -158,8 +202,8 @@ public class votingKiosk {
         System.out.println("Can proceed to read face biometrics.");
     }
 
-    public void readFingerPrintBiometrics () throws NotEnabledException, HumanBiometricScanningException, BiometricVerificationFailedException, ConnectException {
-       System.out.println("Can proceed to read fingerprint biometrics.");
+    public void readFingerPrintBiometrics() throws NotEnabledException, HumanBiometricScanningException, BiometricVerificationFailedException, ConnectException {
+        System.out.println("Can proceed to read fingerprint biometrics.");
     }
 
 }
