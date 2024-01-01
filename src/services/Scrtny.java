@@ -65,8 +65,8 @@ public class Scrtny implements Scrutiny {
         for (Map.Entry<VotingOption, Integer> entry : voteCount.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue() + " votes");
         }
-        System.out.println("Blank votes: " + blankVotes);
-        System.out.println("Null votes: " + nullVotes);
-        System.out.println("Total votes: " + totalVotes);
+        System.out.println("Blank votes: " + blankVotes + " votes");
+        System.out.println("Null votes: " + nullVotes + " votes");
+        System.out.println("Total votes: " + totalVotes + " votes");
     }
 }

@@ -12,6 +12,6 @@ public class LocalServ implements LocalService {
 
         if (!Password.verifyPassword(pssw.getPassword())) throw new InvalidAccountException("Invalid Password.");
 
-        System.out.println("Valid Account");
+        System.out.println("Valid Account.");
     }
 }

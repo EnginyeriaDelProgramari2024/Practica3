@@ -75,4 +75,32 @@ public class votingKioskTest {
         assertThrows(ProceduralException.class, () -> vk.confirmVotingOption('Y'));
         vk.vote();
     }
+
+    @Test
+    @Order(9)
+    public void grantExplicitConsentProceduralException() throws NotValidPasswordException, InvalidAccountException, InvalidDNIDocumException, NotEnabledException, ConnectException {
+        vk.grantExplicitConsent('Y');
+
+    }
+
+    @Test
+    @Order(10)
+    public void readPassportTest() throws NotValidPassportException, PassportBiometricReadingException {
+        assertThrows(PassportBiometricReadingException.class, () -> vk.readPassport());
+        vk.grantExplicitConsent('Y');
+    }
+
+    @Test
+    @Order(11)
+    public void readFaceBiometrics() throws HumanBiometricScanningException, PassportBiometricReadingException, NotValidPassportException {
+        assertThrows(HumanBiometricScanningException.class, () -> vk.readFaceBiometrics());
+    }
+
+    @Test
+    @Order(12)
+    public void readFingerPrintBiometrics() throws HumanBiometricScanningException, PassportBiometricReadingException, NotValidPassportException, BiometricVerificationFailedException, NotEnabledException, ConnectException {
+        assertThrows(HumanBiometricScanningException.class, () -> vk.readFingerPrintBiometrics());
+    }
+
+
 }
