@@ -99,7 +99,7 @@ public class votingKioskTest {
     @Test
     @Order(12)
     public void readFingerPrintBiometrics() throws HumanBiometricScanningException, PassportBiometricReadingException, NotValidPassportException, BiometricVerificationFailedException, NotEnabledException, ConnectException {
-        assertThrows(HumanBiometricScanningException.class, () -> vk.readFingerPrintBiometrics());
+        assertThrows(NotEnabledException.class, () -> vk.readFingerPrintBiometrics());
     }
 
 
