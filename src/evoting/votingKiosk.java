@@ -125,6 +125,7 @@ public class votingKiosk {
             System.out.println("Consulting voting option.");
             System.out.println("Party: " + votingOption);
         }
+        v0 = vopt;
         this.procedure++;
     }
 
