@@ -1,11 +1,10 @@
 /* --------------------------------------------------------------------------------------------------------------------------
 File: BiometricData.java
 Package: data
-Authors: Guillem Mora
+Authors: Guillem Mora Bea
          Roberta Alina Mititelu
          Loana Rodrigues Morais
 --------------------------------------------------------------------------------------------------------------------------- */
-
 package data;
 
 

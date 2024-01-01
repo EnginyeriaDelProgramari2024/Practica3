@@ -1,11 +1,10 @@
 /* --------------------------------------------------------------------------------------------------------------------------
 File: VotingOption.java
 Package: data
-Authors: Guillem Mora
+Authors: Guillem Mora Bea
          Roberta Alina Mititelu
          Loana Rodrigues Morais
 --------------------------------------------------------------------------------------------------------------------------- */
-
 package data;
 
 import exceptions.*;
@@ -35,6 +34,16 @@ public class VotingOption {
         return party;
     }
 
+    /**
+     * equals method
+     *
+     * @param o object
+     *          return true if the object is equal to the party
+     *          return false if the object is not equal to the party
+     *          return false if the object is null
+     *          return false if the object is not an instance of VotingOption
+     * @return true if the object is equal to the party
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -43,11 +52,21 @@ public class VotingOption {
         return party.equals(vO.party);
     }
 
+    /**
+     * hashCode method
+     *
+     * @return party.hashCode()
+     */
     @Override
     public int hashCode() {
         return party.hashCode();
     }
 
+    /**
+     * toString method
+     *
+     * @return "Vote option {" + "party='" + party + '\'' + '}'
+     */
     @Override
     public String toString() {
         return "Vote option {" + "party='" + party + '\'' + '}';
