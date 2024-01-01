@@ -1,3 +1,10 @@
+/* --------------------------------------------------------------------------------------------------------------------------
+File: ElectoralOrg.java
+Package: data
+Authors: Guillem Mora Bea
+         Roberta Alina Mititelu
+         Loana Rodrigues Morais
+--------------------------------------------------------------------------------------------------------------------------- */
 package services;
 
 import data.Nif;
@@ -7,11 +14,20 @@ import exceptions.NotEnabledException;
 public class ElectoralOrg implements ElectoralOrganism {
     private boolean voted;
 
-    // Constructor
+    /**
+     * Constructor
+     */
     public ElectoralOrg() {
         this.voted = false;
     }
 
+    /**
+     * Method that checks if the voter can vote
+     *
+     * @param nif
+     * @throws NotEnabledException if the voter can't vote
+     * @throws ConnectException    if the connection fails
+     */
     @Override
     public void canVote(Nif nif) throws NotEnabledException, ConnectException {
 
@@ -22,6 +38,13 @@ public class ElectoralOrg implements ElectoralOrganism {
         if (!Nif.validateNif(nif.getNif())) throw new NotEnabledException("Nif is not enabled");
     }
 
+    /**
+     * Method that disables the voter
+     *
+     * @param nif
+     * @throws NotEnabledException if the voter can't vote
+     * @throws ConnectException    if the connection fails
+     */
     @Override
     public void disableVoter(Nif nif) throws ConnectException, NotEnabledException {
 

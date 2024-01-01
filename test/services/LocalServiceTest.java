@@ -1,3 +1,10 @@
+/* --------------------------------------------------------------------------------------------------------------------------
+File: LocalServiceTest.java
+Package: data
+Authors: Guillem Mora Bea
+         Roberta Alina Mititelu
+         Loana Rodrigues Morais
+--------------------------------------------------------------------------------------------------------------------------- */
 package services;
 
 import data.Password;

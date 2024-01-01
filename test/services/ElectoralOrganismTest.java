@@ -1,3 +1,10 @@
+/* --------------------------------------------------------------------------------------------------------------------------
+File: ElectoralOrganismTest.java
+Package: data
+Authors: Guillem Mora Bea
+         Roberta Alina Mititelu
+         Loana Rodrigues Morais
+--------------------------------------------------------------------------------------------------------------------------- */
 package services;
 
 import data.Nif;
@@ -10,7 +17,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ElectoralOrganismTest {
-
 
     private ElectoralOrganism electoralOrg;
 

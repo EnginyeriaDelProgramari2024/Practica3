@@ -1,7 +1,13 @@
+/* --------------------------------------------------------------------------------------------------------------------------
+File: votingKioskTest.java
+Package: data
+Authors: Guillem Mora Bea
+         Roberta Alina Mititelu
+         Loana Rodrigues Morais
+--------------------------------------------------------------------------------------------------------------------------- */
 package evoting;
 
 import data.Nif;
-import data.Party;
 import data.Password;
 import data.VotingOption;
 import exceptions.*;
