@@ -6,7 +6,6 @@ Authors: Guillem Mora
          Loana Rodrigues Morais
 --------------------------------------------------------------------------------------------------------------------------- */
 
-
 package data;
 
 import exceptions.NotValidPasswordException;
