@@ -16,15 +16,18 @@ public class PassportReader implements PassportBiometricReader {
 
     private boolean isValidPassport() {
         // TODO: Comprovar que el passaport es valid
+        return false;
     }
 
     private boolean isDataIntegrityValid() {
         // TODO: Comprovar que les dades del passaport son correctes
+        return false;
     }
 
     @Override
     public Nif getNifWithOCR() {
         // TODO: Agafar el NIF amb OCR
+        return null;
     }
 
     @Override
