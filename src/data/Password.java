@@ -5,7 +5,7 @@ import exceptions.NotValidPasswordException;
 
 public class Password {
 
-    private final int MINLENGTH = 8;
+    private static final int MINLENGTH = 8;
   
     // Attributes
     private final String password;
@@ -27,7 +27,7 @@ public class Password {
     }
 
     // Methods
-    private boolean verifyPassword(String password) {
+    public static boolean verifyPassword(String password) {
         if (password.length() < MINLENGTH) {
             return false;
         }
