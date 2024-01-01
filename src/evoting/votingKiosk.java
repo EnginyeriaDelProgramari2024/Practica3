@@ -19,6 +19,13 @@ public class votingKiosk {
 
     // ??? // The class members
     // ??? // The constructor/s
+    public votingKiosk() {
+        this.document = ' ';
+        this.nif = null;
+        this.v0 = null;
+        this.eVoting = false;
+        this.procedure = 0;
+    }
 
     // Input events
     public void initVoting() {
