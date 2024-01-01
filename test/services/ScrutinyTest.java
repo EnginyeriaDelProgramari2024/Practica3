@@ -21,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ScrutinyTest {
     private Scrtny scrutiny;
-    private final ByteArrayOutputStream consoleOutput = new ByteArrayOutputStream();
 
     @BeforeEach
     public void setUp() {
@@ -30,12 +29,7 @@ public class ScrutinyTest {
 
     @Test
     public void testInitVoteCount() {
-        List<VotingOption> parties = Arrays.asList(
-                new VotingOption("PP"),
-                new VotingOption("PSOE"),
-                new VotingOption("VOX"),
-                new VotingOption("PSP")
-        );
+        List<VotingOption> parties = Arrays.asList(new VotingOption("PP"), new VotingOption("PSOE"), new VotingOption("VOX"), new VotingOption("PSP"));
 
         scrutiny.initVoteCount(parties);
 
@@ -100,16 +94,16 @@ public class ScrutinyTest {
         scrutiny.scrutinize(null);
         scrutiny.scrutinize(new VotingOption(""));
 
+        PrintStream originalOut = System.out;
+        ByteArrayOutputStream console = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(console));
+
         scrutiny.getScrutinyResults();
 
-        String expected = "SCRUTINY RESULTS:\n" +
-                          "PP: 1 votes\n" +
-                          "PSOE: 1 votes\n" +
-                          "VOX: 1 votes\n" +
-                          "PSP: 1 votes\n" +
-                          "Blank votes: 1 votes\n" +
-                          "Null votes: 1 votes\n" +
-                          "Total votes: 6 votes\n";
-        assertEquals(expected, consoleOutput.toString());
+        System.setOut(originalOut);
+
+        String expected = "SCRUTINY RESULTS:\n" + "PP: 1 votes\n" + "PSOE: 1 votes\n" + "PSP: 1 votes\n" + "VOX: 1 votes\n" + "Blank votes: 1 votes\n" + "Null votes: 1 votes\n" + "Total votes: 6 votes\n";
+
+        assertEquals(expected, console.toString());
     }
 }
