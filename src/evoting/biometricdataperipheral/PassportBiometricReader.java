@@ -5,8 +5,7 @@ import data.Nif;
 import exceptions.*;
 
 public interface PassportBiometricReader {
-    // Perip. for reading passport biometrics
-    void validatePassport() throws NotValidPassportException;
+    void validatePassport() throws NotValidPassportException, NotValidPasswordException;
 
     Nif getNifWithOCR();
 

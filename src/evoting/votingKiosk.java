@@ -139,7 +139,7 @@ public class votingKiosk {
         if (Math.random() < 0.5) {
             throw new NotValidPassportException("Passport is not valid");
         } else if (Math.random() < 0.5) {
-            throw new PassportBiometricReadingException("Passport biometric data could not be read");
+            throw new PassportBiometricReadingException("Passport biometric data could not be read", e);
         } else {
             System.out.println("Passport read");
         }
