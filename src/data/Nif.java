@@ -12,10 +12,20 @@ package data;
 import exceptions.InvalidDNIDocumException;
 
 
+/**
+ * Nif Class
+ *
+ */
 public class Nif {
 
     private final String nif;
 
+    /**
+     * Constructor
+     *
+     * @param nif nif
+     * @throws InvalidDNIDocumException
+     */
     public Nif(String nif) throws InvalidDNIDocumException {
         if (nif == null) {
             throw new IllegalArgumentException("Nif cannot be null");
@@ -23,11 +33,16 @@ public class Nif {
         if (!validateNif(nif)) {
             throw new InvalidDNIDocumException("Not valid Nif");
         }
-
         this.nif = nif;
     }
 
-    // Method for validating NIF
+    /**
+     * Validate NIF
+     *
+     * @param nif nif
+     * @return true -> nif.length() == 9
+     *         false -> opposite case
+     */
     public static boolean validateNif(String nif) {
         // Verify correct length NIF
         if (nif.length() != 9) {
@@ -52,7 +67,12 @@ public class Nif {
         return letter == calculatedLetter;
     }
 
-    // Method for calculating the corresponding letter
+    /**
+     * Method for calculating the corresponding letter
+     *
+     * @param numerosStr numerosStr
+     * @return letters[index]
+     */
     private static char calculateLetter(String numerosStr) {
         char[] letters = "TRWAGMYFPDXBNJZSQVHLCKE".toCharArray();
 
@@ -63,6 +83,11 @@ public class Nif {
         return letters[index];
     }
 
+    /**
+     * Return nif
+     *
+     * @return nif
+     */
     public String getNif() {
         return nif;
     }
