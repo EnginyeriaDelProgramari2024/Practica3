@@ -69,7 +69,10 @@ public class votingKioskTest {
         vk.consultVotingOption(new VotingOption("PSOE"));
     }
 
-
-
-
+    @Test
+    @Order(8)
+    public void confirmVotingOptionPorceduralException() throws ProceduralException, NotValidPasswordException, InvalidAccountException, InvalidDNIDocumException, NotEnabledException, ConnectException {
+        assertThrows(ProceduralException.class, () -> vk.confirmVotingOption('Y'));
+        vk.vote();
+    }
 }
